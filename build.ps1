@@ -19,7 +19,7 @@ cd build
 
 # We use VS 2017 as suggested in the README.md. cl.exe version shall be 19.16.27045.
 
-cmake .. -G "Visual Studio 15 2017" -DTRT_LIB_DIR=$Env:TRT_LIBPATH -DTRT_OUT_DIR='$(Get-Location)\out' -DCMAKE_TOOLCHAIN_FILE=..\cmake\toolchains\cmake_x64_win.toolchain 
+cmake .. -G "Visual Studio 15 2017" -DTRT_LIB_DIR=$Env:TRT_LIBPATH -DTRT_OUT_DIR='$(Get-Location)/out' -DCMAKE_TOOLCHAIN_FILE="..\cmake\toolchains\cmake_x64_win.toolchain"
 
 #-DCMAKE_CUDA_ARCHITECTURES="75" 
  
