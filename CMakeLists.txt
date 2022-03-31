@@ -15,6 +15,9 @@
 #
 
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+
+cmake_policy(SET CMP0111 NEW)
+
 include(cmake/modules/set_ifndef.cmake)
 include(cmake/modules/find_library_create_target.cmake)
 
