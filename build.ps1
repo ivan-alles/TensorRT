@@ -1,6 +1,6 @@
 $Env:TRT_OSSPATH = "D:\ivan\projects\TensorRT"
 $Env:PATH = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin;" + $Env:PATH
-$Env:TRT_LIBPATH="D:\lib\TensorRT-8.2.3.0\lib"
+$Env:TRT_LIBPATH="D:\lib\TensorRT-8.2.3.0"
 
 $Env:PATH = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\bin" + $Env:PATH
 
