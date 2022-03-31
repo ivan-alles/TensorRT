@@ -1,0 +1,1 @@
+Windows 10 SDK (10.0.17134.0) was installed to build TensorRT sample_mnist.sln 
