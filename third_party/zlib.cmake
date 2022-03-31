@@ -14,8 +14,12 @@
 # limitations under the License.
 #
 
-find_package(PkgConfig)
-pkg_search_module(ZLIB REQUIRED zlib)
+# See https://github.com/NVIDIA/TensorRT/issues/901
+if (UNIX)
+    find_package(PkgConfig)
+    pkg_search_module(ZLIB REQUIRED zlib)
+endif(UNIX)
+
 set(zlib_INCLUDE_DIR ${ZLIB_INCLUDE_DIRS})
 set(ADD_LINK_DIRECTORY ${ADD_LINK_DIRECTORY} ${ZLIB_LIBRARY_DIRS})
 set(ADD_CFLAGS ${ADD_CFLAGS} ${ZLIB_CFLAGS_OTHER})
