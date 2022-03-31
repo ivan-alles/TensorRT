@@ -17,6 +17,7 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
 cmake_policy(SET CMP0111 NEW)
+cmake_policy(SET CMP0104 NEW)
 
 include(cmake/modules/set_ifndef.cmake)
 include(cmake/modules/find_library_create_target.cmake)
@@ -58,8 +59,8 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
 option(BUILD_PLUGINS "Build TensorRT plugin" ON)
-option(BUILD_PARSERS "Build TensorRT parsers" ON)
-option(BUILD_SAMPLES "Build TensorRT samples" ON)
+#option(BUILD_PARSERS "Build TensorRT parsers" ON)
+#option(BUILD_SAMPLES "Build TensorRT samples" ON)
 
 # C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -86,7 +87,7 @@ endif()
 ############################################################################################
 # Dependencies
 
-set(DEFAULT_CUDA_VERSION 11.3.1)
+set(DEFAULT_CUDA_VERSION 11.4.3)
 set(DEFAULT_CUDNN_VERSION 8.2)
 set(DEFAULT_PROTOBUF_VERSION 3.0.0)
 
