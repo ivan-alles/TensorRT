@@ -16,6 +16,7 @@ if (!(Test-Path build)) {
 }
 
 # Tell VisualStudio where CUDA tools are.
+# If Visual Studio is opened manually (not from this file), this variable shall be defined system-wide.
 $Env:CudaToolkitDir="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4"
 
 cd build
