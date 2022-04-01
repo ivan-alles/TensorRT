@@ -184,7 +184,7 @@ if (${LATEST_SM} GREATER_EQUAL 70)
     set(BERT_GENCODES "${BERT_GENCODES} -gencode arch=compute_${LATEST_SM},code=compute_${LATEST_SM}")
 endif()
 #set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xcompiler -Wno-deprecated-declarations")
-set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xcompiler")
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS}")
 
 ############################################################################################
 # TensorRT
