@@ -49,6 +49,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <cstdlib>
 
 using namespace nvinfer1;
 using namespace plugin;
@@ -924,7 +925,10 @@ inline int getW(const Dims& d)
 inline void loadLibrary(const std::string& path)
 {
 #ifdef _MSC_VER
-    void* handle = LoadLibrary(path.c_str());
+	// void* handle = LoadLibrary(path.c_str());
+	// TODO(ia):  this will only work for ASCII paths
+    std::wstring pathw = std::wstring(path.begin(), path.end());
+    void* handle = LoadLibrary(pathw.c_str());
 #else
     int32_t flags{RTLD_LAZY};
 #if ENABLE_ASAN
