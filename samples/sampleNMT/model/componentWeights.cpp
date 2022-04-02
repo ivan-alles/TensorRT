@@ -29,7 +29,9 @@ std::istream& operator>>(std::istream& input, ComponentWeights& value)
     input.seekg(0, std::ios::end);
     size_t fileSize = input.tellg();
 
-    input.seekg(-footerSize, std::ios::end);
+	// ia: windows fix
+	// input.seekg(-std::streampos(footerSize), std::ios::end);
+    input.seekg(-std::streampos(footerSize), std::ios::end);
     input.read(footer, footerSize);
 
     size_t metaDataCount = ((int32_t*) footer)[0];
@@ -37,7 +39,9 @@ std::istream& operator>>(std::istream& input, ComponentWeights& value)
     ASSERT(footerString.compare(str) == 0);
     free(footer);
 
-    input.seekg(-(footerSize + metaDataCount * sizeof(int32_t)), std::ios::end);
+	// ia: windows fix
+	// input.seekg(-(footerSize + metaDataCount * sizeof(int32_t)), std::ios::end);
+    input.seekg(-std::streampos(footerSize + metaDataCount * sizeof(int32_t)), std::ios::end);
     value.mMetaData.resize(metaDataCount);
     size_t metaSize = metaDataCount * sizeof(int32_t);
     input.read((char*) (&value.mMetaData[0]), metaSize);
