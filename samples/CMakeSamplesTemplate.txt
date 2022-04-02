@@ -85,7 +85,8 @@ set(SAMPLE_DEP_LIBS
     ${CUBLAS_LIB}
     ${CUDNN_LIB}
     nvinfer
-    ${RT_LIB}
+# TODO(ia): RT_LIB is not defined, remove for now. This could be a reference to the static library.
+#    ${RT_LIB}
     ${CMAKE_DL_LIBS}
     ${CMAKE_THREAD_LIBS_INIT}
 )
